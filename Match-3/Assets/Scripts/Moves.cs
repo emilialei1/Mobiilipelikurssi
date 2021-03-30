@@ -22,6 +22,10 @@ public class Moves : MonoBehaviour
         if(movesAmount < 1)
         {
             GameOverScript.Setup(maxPlatform); 
+            if(GameOverScript.PlayAgain)
+            {
+                movesAmount = 7;
+            }
         }
     }
 }
