@@ -98,6 +98,7 @@ public class Board : MonoBehaviour
             findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
+            Score.scoreValue += 10 * Score.combo;
         }
     }
 
@@ -183,9 +184,13 @@ public class Board : MonoBehaviour
         while(MatchesOnBoard())
         {
             yield return new WaitForSeconds(.5f);
+            Score.combo += 1;
+            Moves.movesAmount++;
             DestroyMatches();
+
         }
         yield return new WaitForSeconds(.5f);
         currentState = GameState.move;
+        Score.combo = 1;
     }
 }

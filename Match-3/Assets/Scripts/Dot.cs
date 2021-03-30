@@ -97,6 +97,7 @@ public class Dot : MonoBehaviour
             } else
             {
                 board.DestroyMatches();
+                Moves.movesAmount--;
             }
             otherDot = null;
         } 
@@ -119,6 +120,7 @@ public class Dot : MonoBehaviour
         }
         
     }
+
 
     void CalculateAngle()
     {
@@ -206,4 +208,6 @@ public class Dot : MonoBehaviour
 
         }
     }
+
+
 }
